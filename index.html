@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css"> <!-- رابط ملف CSS -->
     <title>Pour Toi</title>
 </head>
 <body>
     <header>
-    <img src="img/P3.jpg" alt="Logo" class="logo">
-    <h1 class="site-name">Pour Toi</h1>
-    <span class="night-mode-toggle" style="float: right; cursor: pointer; font-size: 1.5em;">🌙</span> <!-- إشارة الوضع الليلي -->
-</header>
-    
-   <section id="about">
-    <h2>À Propos de Moi</h2>
-    <p>Je suis un designer passionné par la création de designs uniques et attrayants. Avec une formation en design graphique et plusieurs années d'expérience, je me consacre à fournir des solutions créatives qui répondent aux besoins de mes clients.</p>
-    <p>Mon approche se concentre sur l'harmonie des couleurs et l'esthétique minimaliste, garantissant que chaque design raconte une histoire.</p>
-    <p>J'ai eu l'opportunité de travailler sur divers projets, allant de la création de logos à des campagnes de branding complètes.</p>
-    <p>Si vous avez une idée de design ou un projet en tête, n'hésitez pas à me contacter!</p>
-</section>
+        <img src="img/P3.jpg" alt="Logo" class="logo">
+        <h1 class="site-name">Pour Toi</h1>
+    </header>
 
-    <section id="realizations">
+    <section id="about">
+        <h2>À Propos de Moi</h2>
+        <p>Je suis un designer passionné par la création de designs uniques et attrayants.</p>
+    </section>
+
+    <section id="mes-realisations">
         <h2>Mes Réalisations</h2>
-        <div class="realization-container">
-            <div class="realization">
-                <img src="img/P1.jpg" alt="Design 1" class="image">
-                <p>TOP CLOTHES DESIGN</p>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- أضف صورك هنا -->
+                <div class="swiper-slide">
+                    <img src="C:\Users\pc\Desktop\PourToi\img\P1.jpg" alt="Réalisation 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="C:\Users\pc\Desktop\PourToi\img\P2.jpg" alt="Réalisation 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="C:\Users\pc\Desktop\PourToi\img\P3.jpg" alt="Réalisation 3">
+                </div>
+                <!-- أضف المزيد من الشرائح (صور) حسب الحاجة -->
             </div>
-            <div class="realization">
-                <img src="img/P2.jpg" alt="Design 2" class="image">
-                <p>FIFA SPORTS DISIGN</p>
-            </div>
-            <!-- يمكنك إضافة المزيد من التصميمات هنا -->
+            <!-- عناصر التحكم (اختياري) -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -50,8 +56,11 @@
             <label for="type">Type de design:</label>
             <input type="text" id="type" name="type" placeholder="Type de design souhaité" required>
 
-            <label for="duration">Durée en jour :</label>
+            <label for="duration">Durée en jour </label>
             <input type="text" id="duration" name="duration" placeholder="Durée souhaitée" required>
+
+            <label for="image">Image de référence:</label>
+            <input type="file" id="image" name="image" accept="image/*">
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" placeholder="Détails supplémentaires" required></textarea>
@@ -61,52 +70,48 @@
     </section>
 
     <section id="contact">
-    <h2>Mes Coordonnées</h2>
-    <div class="contact-info">
-        <a href="tel:34025654" class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://wa.me/34025654" class="contact-icon">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://www.facebook.com/share/oaKKQHdmy6CBisNF/?mibextid=LQQJ4d" class="contact-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.snapchat.com/add/ms_chbr?share_id=2NiLYcTeQqGgTFzlNOG8kg&locale=fr_MR" class="contact-icon">
-            <i class="fab fa-snapchat-ghost"></i>
-        </a>
-    </div>
-</section>
-
+        <h2>Mes Coordonnées</h2>
+        <div class="contact-info">
+            <a href="tel:34025654" class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <a href="https://wa.me/34025654" class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/share/oaKKQHdmy6CBisNF/?mibextid=LQQJ4d" class="contact-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.snapchat.com/add/ms_chbr?share_id=2NiLYcTeQqGgTFzlNOG8kg&locale=fr_MR" class="contact-icon">
+                <i class="fab fa-snapchat-ghost"></i>
+            </a>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2024 Pour Toi. Tous droits réservés.</p>
     </footer>
 
     <script>
-    // إضافة تأثير الحركة عند الضغط على الصورة
-    const images = document.querySelectorAll('.image');
+        // إضافة تأثير الحركة عند الضغط على الصورة
+        const images = document.querySelectorAll('.image');
 
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            image.classList.toggle('zoom');
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                image.classList.toggle('zoom');
+            });
         });
-    });
-
-    // وظيفة لتفعيل/إلغاء تفعيل الوضع الليلي
-    const toggleButton = document.querySelector('.night-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('night-mode');
-        document.querySelectorAll('header, section, footer').forEach(element => {
-            element.classList.toggle('night-mode');
+    </script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-
-        // تغيير الإشارة بناءً على الحالة
-        if (document.body.classList.contains('night-mode')) {
-            toggleButton.textContent = '🌞'; // إشارة النهار
-        } else {
-            toggleButton.textContent = '🌙'; // إشارة الليل
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
