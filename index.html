@@ -9,9 +9,10 @@
 </head>
 <body>
     <header>
-        <img src="img/P3.jpg" alt="Logo" class="logo">
-        <h1 class="site-name">Pour Toi</h1>
-    </header>
+    <img src="img/P3.jpg" alt="Logo" class="logo">
+    <h1 class="site-name">Pour Toi</h1>
+    <button class="night-mode-toggle">Activer le mode nuit</button> <!-- زر الوضع الليلي -->
+</header>
 
    <section id="about">
     <h2>À Propos de Moi</h2>
@@ -86,14 +87,30 @@
     </footer>
 
     <script>
-        // إضافة تأثير الحركة عند الضغط على الصورة
-        const images = document.querySelectorAll('.image');
+    // إضافة تأثير الحركة عند الضغط على الصورة
+    const images = document.querySelectorAll('.image');
 
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                image.classList.toggle('zoom');
-            });
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            image.classList.toggle('zoom');
         });
-    </script>
+    });
+
+    // وظيفة لتفعيل/إلغاء تفعيل الوضع الليلي
+    const toggleButton = document.querySelector('.night-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('night-mode');
+        document.querySelectorAll('header, section, footer').forEach(element => {
+            element.classList.toggle('night-mode');
+        });
+
+        // تغيير نص الزر بناءً على الحالة
+        if (document.body.classList.contains('night-mode')) {
+            toggleButton.textContent = 'Désactiver le mode nuit';
+        } else {
+            toggleButton.textContent = 'Activer le mode nuit';
+        }
+    });
+</script>
 </body>
 </html>
