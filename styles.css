@@ -22,6 +22,39 @@
     form input, form textarea {
         width: 100%; /* عرض 100% للنموذج */
     }
+    /* الوضع الليلي */
+body.night-mode {
+    background-color: #121212; /* لون خلفية داكن */
+    color: #ffffff; /* لون النص أبيض */
+}
+
+header.night-mode {
+    background: #1e1e1e; /* لون خلفية العنوان */
+}
+
+section.night-mode {
+    background: #1e1e1e; /* لون خلفية الأقسام */
+    box-shadow: none; /* إزالة ظل الأقسام */
+}
+
+footer.night-mode {
+    background: #1e1e1e; /* لون خلفية الفوتر */
+}
+
+/* زر الوضع الليلي */
+.night-mode-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background: #35424a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.night-mode-toggle:hover {
+    background: #475a62;
+}
 
     header, footer {
         padding: 10px 0; /* تقليل الحشوة في الهيدر والفوتر */
@@ -165,19 +198,4 @@ form button:hover {
 
 .contact-icon:hover {
     background-color: #555;
-}
-#mes-realisations {
-    text-align: center;
-}
-
-.swiper-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
 }
