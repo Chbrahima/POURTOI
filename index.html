@@ -3,58 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- رابط ملف CSS -->
-    <title>Pour Toi</title>
+    <title>Pour Toi - Boutique de Football</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="img/P3.jpg" alt="Logo" class="logo">
         <h1 class="site-name">Pour Toi</h1>
-        <span class="night-mode-toggle" style="float: right; cursor: pointer; font-size: 1.5em;">🌙</span>
+        <nav>
+            <ul>
+                <li><a href="#jerseys" onclick="showSection('jerseys')">Camisetas</a></li>
+                <li><a href="#sportswear" onclick="showSection('sportswear')">Vêtements Sportifs</a></li>
+                <li><a href="#shoes" onclick="showSection('shoes')">Chaussures</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <section id="about">
-        <h2>À Propos de Moi</h2>
-        <p>Je suis un designer passionné par la création de designs uniques et attrayants...</p>
-    </section>
 
-    <section id="realizations">
-        <h2>Mes Réalisations</h2>
+    <section id="jerseys" class="product-section">
+        <h2>Camisetas</h2>
         <div class="realization-container">
             <div class="realization">
-                <img src="img/P1.jpg" alt="Design 1" class="image" data-title="TOP CLOTHES DESIGN">
-                <p>TOP CLOTHES DESIGN</p>
+                <img src="jersey1.jpg" alt="Camiseta 1" class="image" onclick="openForm('jerseyForm')">
+                <p>Camiseta Standard - 800 MRU</p>
             </div>
             <div class="realization">
-                <img src="img/P2.jpg" alt="Design 2" class="image" data-title="FIFA SPORTS DESIGN">
-                <p>FIFA SPORTS DESIGN</p>
+                <img src="jersey2.jpg" alt="Camiseta 2" class="image" onclick="openForm('jerseyForm')">
+                <p>Camiseta Personnalisée - 1000 MRU</p>
             </div>
-        </div>
-        <div id="lightbox" class="lightbox">
-            <span class="close">&times;</span>
-            <img class="lightbox-content">
-            <div class="caption"></div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Mes Coordonnées</h2>
-        <div class="contact-info">
-            <a href="tel:34025654" class="contact-icon" title="Téléphone">
-                <i class="fas fa-phone-alt"></i>
-            </a>
-            <a href="https://wa.me/34025654" class="contact-icon" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.facebook.com/share/oaKKQHdmy6CBisNF/?mibextid=LQQJ4d" class="contact-icon" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.snapchat.com/add/ms_chbr?share_id=2NiLYcTeQqGgTFzlNOG8kg&locale=fr_MR" class="contact-icon" title="Snapchat">
-                <i class="fab fa-snapchat-ghost"></i>
-            </a>
+    <section id="sportswear" class="product-section">
+        <h2>Vêtements Sportifs</h2>
+        <div class="realization-container">
+            <div class="realization">
+                <img src="sportswear1.jpg" alt="Vêtement Sportif 1" class="image">
+                <p>Vêtement Sportif - 500 MRU</p>
+            </div>
+            <div class="realization">
+                <img src="sportswear2.jpg" alt="Vêtement Sportif 2" class="image">
+                <p>Vêtement Sportif - 600 MRU</p>
+            </div>
         </div>
     </section>
+
+    <section id="shoes" class="product-section">
+        <h2>Chaussures</h2>
+        <div class="realization-container">
+            <div class="realization">
+                <img src="shoes1.jpg" alt="Chaussure 1" class="image">
+                <p>Chaussure - 1000 MRU</p>
+            </div>
+            <div class="realization">
+                <img src="shoes2.jpg" alt="Chaussure 2" class="image">
+                <p>Chaussure - 1200 MRU</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج الطلب للقمصان -->
+    <div id="jerseyForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm('jerseyForm')">&times;</span>
+            <h3>Acheter un Maillot</h3>
+            <label for="customization">Choisissez une option:</label>
+            <select id="customization" onchange="toggleCustomization()">
+                <option value="standard">Standard (800 MRU)</option>
+                <option value="custom">Personnalisé (1000 MRU)</option>
+            </select>
+
+            <div id="customFields" style="display: none;">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" placeholder="Votre nom" required>
+                <label for="number">Numéro:</label>
+                <input type="text" id="number" placeholder="Numéro souhaité" required>
+            </div>
+
+            <label for="size">Choisissez la taille:</label>
+            <select id="size" required>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+
+            <label for="paymentMethod">Choisissez un moyen de paiement:</label>
+            <select id="paymentMethod" required>
+                <option value="Bankily">Bankily</option>
+                <option value="Masrivi">Masrivi</option>
+                <option value="Sedad">Sedad</option>
+            </select>
+
+            <label for="paymentScreenshot">Télécharger une capture d'écran du paiement:</label>
+            <input type="file" id="paymentScreenshot" accept="image/*" required>
+
+            <button type="button" onclick="submitJerseyOrder()">Commander</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Pour Toi. Tous droits réservés.</p>
