@@ -24,13 +24,15 @@
 
     <section id="realizations">
         <h2>Mes Réalisations</h2>
-            <section id="image-slider">
-    <<div class="slider">
-    <img src="img/P1.jpg" alt="وصف الصورة 1">
-    <img src="img/P2.jpg" alt="وصف الصورة 2">
-    <img src="img/P3.jpg" alt="وصف الصورة 3">
-</div>
-</section>
+        <div class="realization-container">
+            <div class="realization">
+                <img src="img/P1.jpg" alt="Design 1" class="image">
+                <p>TOP CLOTHES DESIGN</p>
+            </div>
+            <div class="realization">
+                <img src="img/P2.jpg" alt="Design 2" class="image">
+                <p>FIFA SPORTS DISIGN</p>
+            </div>
             <!-- يمكنك إضافة المزيد من التصميمات هنا -->
         </div>
     </section>
@@ -105,18 +107,6 @@
             toggleButton.textContent = '🌙'; // إشارة الليل
         }
     });
-</script>
-<script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showNextSlide() {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-    }
-
-    setInterval(showNextSlide, 3000); // عرض كل صورة لمدة 3 ثوانٍ
 </script>
 </body>
 </html>
