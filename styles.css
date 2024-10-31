@@ -1,72 +1,3 @@
-/* استعلام وسائط للأجهزة المحمولة */
-@media (max-width: 768px) {
-    /* تعديل حجم الخط */
-    .site-name {
-        font-size: 2em; /* تقليل حجم الخط */
-    }
-
-    .realization-container {
-        flex-direction: column; /* ترتيب العناصر عموديًا */
-        align-items: center; /* توسيط العناصر */
-    }
-
-    .image {
-        width: 80%; /* عرض أكبر للصور على الهواتف */
-        margin-bottom: 20px; /* إضافة مسافة بين الصور */
-    }
-
-    form {
-        padding: 10px; /* تقليل الحشوة داخل النموذج */
-    }
-
-    form input, form textarea {
-        width: 100%; /* عرض 100% للنموذج */
-    }
-    /* الوضع الليلي */
-body.night-mode {
-    background-color: #121212; /* لون خلفية داكن */
-    color: #ffffff; /* لون النص أبيض */
-}
-
-header.night-mode {
-    background: #1e1e1e; /* لون خلفية العنوان */
-}
-
-section.night-mode {
-    background: #1e1e1e; /* لون خلفية الأقسام */
-    box-shadow: none; /* إزالة ظل الأقسام */
-}
-
-footer.night-mode {
-    background: #1e1e1e; /* لون خلفية الفوتر */
-}
-
-/* زر الوضع الليلي */
-.night-mode-toggle {
-    cursor: pointer;
-    padding: 10px;
-    background: #35424a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 20px 0;
-}
-
-.night-mode-toggle:hover {
-    background: #475a62;
-}
-
-    header, footer {
-        padding: 10px 0; /* تقليل الحشوة في الهيدر والفوتر */
-    }
-}
-
-/* استعلام وسائط للأجهزة اللوحية */
-@media (max-width: 1024px) {
-    .image {
-        width: 45%; /* عرض أقل للصور على الأجهزة اللوحية */
-    }
-}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -81,33 +12,12 @@ header {
     text-align: center;
 }
 
-.logo {
-    width: 100px;
-    border-radius: 50%;
-}
-
 .site-name {
     font-size: 2.5em;
     margin: 0;
-    animation: slide 2s ease-in-out;
 }
 
-@keyframes slide {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-h2 {
-    color: #35424a;
-}
-
-section {
+.product-section {
     margin: 20px;
     padding: 20px;
     background: #ffffff;
@@ -122,23 +32,19 @@ section {
 }
 
 .realization {
-    margin: 10px; /* إضافة مسافة بين العناصر */
+    margin: 10px;
 }
 
 .image {
-    flex: 1 0 20%; /* استخدام flex لتحديد العرض */
-    max-width: 200px; /* تحديد الحد الأقصى للعرض */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    flex: 1 0 20%;
+    max-width: 200px;
+    height: auto;
     transition: transform 0.2s;
     cursor: pointer;
 }
 
 .image:hover {
-    transform: scale(1.05); /* تأثير عند التمرير */
-}
-
-.contact-info p {
-    margin: 5px 0;
+    transform: scale(1.05);
 }
 
 footer {
@@ -148,23 +54,45 @@ footer {
     color: #ffffff;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
 }
 
-form label {
-    margin: 10px 0 5px;
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
 }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-form button {
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
     padding: 10px;
     background: #35424a;
     color: white;
@@ -173,103 +101,6 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+button:hover {
     background: #475a62;
-}
-.contact-info {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.contact-icon:hover {
-    background-color: #555;
-}
-/* الوضع الليلي */
-body.night-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-header.night-mode, section.night-mode, footer.night-mode {
-    background-color: #1e1e1e;
-}
-
-.night-mode-toggle {
-    cursor: pointer;
-    padding: 10px;
-    background: #35424a;
-    color: white;
-    border-radius: 5px;
-}
-
-.contact-icon {
-    transition: background-color 0.3s;
-}
-
-.contact-icon:hover {
-    background-color: #555;
-}
-
-/* التأثيرات الخاصة بالصور */
-.image {
-    transition: transform 0.3s, filter 0.3s;
-    filter: grayscale(50%);
-}
-
-.image:hover {
-    transform: scale(1.05);
-    filter: grayscale(0);
-}
-
-/* نافذة عرض الصور المنبثقة */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    max-width: 80%;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #ffffff;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    font-size: 18px;
 }
