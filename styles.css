@@ -199,11 +199,11 @@ form button:hover {
 .contact-icon:hover {
     background-color: #555;
 }
-/* شريط الصور */
-#image-slider {
+/* شريط الصور */#image-slider {
     position: relative;
-    width: 100%;
-    max-width: 600px;
+    width: 80%; /* عرض الشريط */
+    max-width: 600px; /* الحد الأقصى للعرض */
+    height: 300px; /* ارتفاع الشريط */
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
@@ -212,18 +212,13 @@ form button:hover {
 
 .slider-container {
     display: flex;
-    width: 300%; /* ضبط العرض حسب عدد الصور */
+    width: calc(100% * 3); /* اضبط العدد حسب عدد الصور */
     animation: slideShow 9s infinite; /* توقيت العرض التلقائي */
 }
 
 .slide {
-    width: 100%;
+    width: 100%; /* تجعل كل صورة بعرض الشريط */
+    height: 100%; /* تجعل كل صورة بارتفاع الشريط */
+    object-fit: cover; /* لضبط الصورة داخل الشريط */
     transition: opacity 1s ease-in-out;
-}
-
-@keyframes slideShow {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
 }
