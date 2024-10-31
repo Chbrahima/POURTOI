@@ -201,9 +201,9 @@ form button:hover {
 }
 /* شريط الصور */#image-slider {
     position: relative;
-    width: 80%; /* عرض الشريط */
-    max-width: 600px; /* الحد الأقصى للعرض */
-    height: 300px; /* ارتفاع الشريط */
+    width: 50%; /* عرض الشريط */
+    max-width: 300px; /* الحد الأقصى للعرض */
+    height: 150px; /* ارتفاع الشريط */
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
