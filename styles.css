@@ -199,29 +199,6 @@ form button:hover {
 .contact-icon:hover {
     background-color: #555;
 }
-/* شريط الصور */#image-slider {
-    position: relative;
-    width: 80%; /* عرض الشريط */
-    max-width: 600px; /* الحد الأقصى للعرض */
-    height: 300px; /* ارتفاع الشريط */
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.slider-container {
-    display: flex;
-    width: calc(100% * 3); /* اضبط العدد حسب عدد الصور */
-    animation: slideShow 9s infinite; /* توقيت العرض التلقائي */
-}
-
-.slide {
-    width: 300px; /* تجعل كل صورة بعرض الشريط */
-    height: 2000px; /* تجعل كل صورة بارتفاع الشريط */
-    object-fit: cover; /* لضبط الصورة داخل الشريط */
-    transition: opacity 1s ease-in-out;
-}
 /* الأساسيات */
 body {
     font-family: Arial, sans-serif;
@@ -235,14 +212,17 @@ body {
     width: 80%; /* عرض الحاوية */
     margin: 0 auto; /* توسيط الحاوية */
     padding: 20px; /* إضافة بعض الحشو */
+    display: flex; /* استخدام flexbox لعرض الصور */
+    flex-wrap: wrap; /* للسماح للصورة بالانتقال إلى السطر التالي */
+    justify-content: center; /* توسيط الصور داخل الحاوية */
 }
 
 /* تنسيق الصور */
 img {
     max-width: 100%; /* يجعل الصورة تتناسب مع عرض الحاوية */
     height: auto;    /* يحافظ على نسبة العرض إلى الارتفاع */
-    display: block;  /* يمنع المسافات أسفل الصورة */
-    margin: 0 auto; /* يضبط الصورة في المنتصف */
+    margin: 10px; /* إضافة مسافة بين الصور */
+    flex: 1 1 300px; /* السماح للصور بالنمو والانكماش */
     border-radius: 10px; /* زوايا دائرية */
 }
 
@@ -285,3 +265,5 @@ button:hover {
     height: 30px; /* حجم الأيقونات */
     margin-right: 10px; /* مسافة بين الأيقونات */
 }
+
+
