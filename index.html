@@ -82,31 +82,6 @@
         <p>&copy; 2024 Pour Toi. Tous droits réservés.</p>
     </footer>
 
-    <script>
-    // إضافة تأثير الحركة عند الضغط على الصورة
-    const images = document.querySelectorAll('.image');
 
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            image.classList.toggle('zoom');
-        });
-    });
-
-    // وظيفة لتفعيل/إلغاء تفعيل الوضع الليلي
-    const toggleButton = document.querySelector('.night-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('night-mode');
-        document.querySelectorAll('header, section, footer').forEach(element => {
-            element.classList.toggle('night-mode');
-        });
-
-        // تغيير الإشارة بناءً على الحالة
-        if (document.body.classList.contains('night-mode')) {
-            toggleButton.textContent = '🌞'; // إشارة النهار
-        } else {
-            toggleButton.textContent = '🌙'; // إشارة الليل
-        }
-    });
-</script>
 </body>
 </html>
