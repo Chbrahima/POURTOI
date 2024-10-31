@@ -222,3 +222,66 @@ form button:hover {
     object-fit: cover; /* لضبط الصورة داخل الشريط */
     transition: opacity 1s ease-in-out;
 }
+/* الأساسيات */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* حاوية الصور */
+.container {
+    width: 80%; /* عرض الحاوية */
+    margin: 0 auto; /* توسيط الحاوية */
+    padding: 20px; /* إضافة بعض الحشو */
+}
+
+/* تنسيق الصور */
+img {
+    max-width: 100%; /* يجعل الصورة تتناسب مع عرض الحاوية */
+    height: auto;    /* يحافظ على نسبة العرض إلى الارتفاع */
+    display: block;  /* يمنع المسافات أسفل الصورة */
+    margin: 0 auto; /* يضبط الصورة في المنتصف */
+    border-radius: 10px; /* زوايا دائرية */
+}
+
+/* تنسيق العناوين */
+h1, h2, h3 {
+    color: #333; /* لون النص */
+}
+
+/* نموذج الاتصال */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* زوايا دائرية للنموذج */
+}
+
+/* زر الإرسال */
+button {
+    padding: 10px;
+    background-color: #28a745; /* لون الزر */
+    color: white;
+    border: none;
+    border-radius: 5px; /* زوايا دائرية للزر */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+}
+
+button:hover {
+    background-color: #218838; /* تغيير لون الزر عند التمرير */
+}
+
+/* أيقونات التواصل */
+.icon {
+    width: 30px; /* حجم الأيقونات */
+    height: 30px; /* حجم الأيقونات */
+    margin-right: 10px; /* مسافة بين الأيقونات */
+}
