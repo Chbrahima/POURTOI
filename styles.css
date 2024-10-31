@@ -199,3 +199,77 @@ form button:hover {
 .contact-icon:hover {
     background-color: #555;
 }
+/* الوضع الليلي */
+body.night-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.night-mode, section.night-mode, footer.night-mode {
+    background-color: #1e1e1e;
+}
+
+.night-mode-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background: #35424a;
+    color: white;
+    border-radius: 5px;
+}
+
+.contact-icon {
+    transition: background-color 0.3s;
+}
+
+.contact-icon:hover {
+    background-color: #555;
+}
+
+/* التأثيرات الخاصة بالصور */
+.image {
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(50%);
+}
+
+.image:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+/* نافذة عرض الصور المنبثقة */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 18px;
+}
