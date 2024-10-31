@@ -1,26 +1,40 @@
-// تفعيل الوضع الليلي
-const toggleButton = document.querySelector('.night-mode-toggle');
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('night-mode');
-    document.querySelectorAll('header, section, footer').forEach(element => {
-        element.classList.toggle('night-mode');
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.product-section');
+    sections.forEach(section => {
+        section.style.display = 'none';
     });
-    toggleButton.textContent = document.body.classList.contains('night-mode') ? '🌞' : '🌙';
-});
+    document.getElementById(sectionId).style.display = 'block';
+}
 
-// نافذة عرض الصور المنبثقة
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-content');
-const caption = document.querySelector('.caption');
+function openForm(formId) {
+    document.getElementById(formId).style.display = 'block';
+}
 
-document.querySelectorAll('.image').forEach(image => {
-    image.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = image.src;
-        caption.textContent = image.getAttribute('data-title');
-    });
-});
+function closeForm(formId) {
+    document.getElementById(formId).style.display = 'none';
+}
 
-document.querySelector('.close').addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
+function toggleCustomization() {
+    const customizationSelect = document.getElementById('customization');
+    const customFields = document.getElementById('customFields');
+    if (customizationSelect.value === 'custom') {
+        customFields.style.display = 'block';
+    } else {
+        customFields.style.display = 'none';
+    }
+}
+
+function submitJerseyOrder() {
+    const customization = document.getElementById('customization').value;
+    const name = document.getElementById('name').value;
+    const number = document.getElementById('number').value;
+    const size = document.getElementById('size').value;
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    const paymentScreenshot = document.getElementById('paymentScreenshot').files[0];
+
+    if (customization === "custom") {
+        if (!name || !number) {
+            alert("Veuillez remplir tous les champs!");
+            return;
+        }
+        alert(`Votre commande de maillot personnalisé a été soumise!\nNom: ${name}\nNuméro: ${number}\nTaille: ${size}\nMoy
