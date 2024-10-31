@@ -22,11 +22,11 @@
         <h2>Camisetas</h2>
         <div class="realization-container">
             <div class="realization">
-                <img src="jersey1.jpg" alt="Camiseta 1" class="image" onclick="openForm('jerseyForm')">
+                <img src="jersey1.jpg" alt="Camiseta 1" class="image" onclick="openOptions('standard')">
                 <p>Camiseta Standard - 800 MRU</p>
             </div>
             <div class="realization">
-                <img src="jersey2.jpg" alt="Camiseta 2" class="image" onclick="openForm('jerseyForm')">
+                <img src="jersey2.jpg" alt="Camiseta 2" class="image" onclick="openOptions('custom')">
                 <p>Camiseta Personnalisée - 1000 MRU</p>
             </div>
         </div>
@@ -61,22 +61,17 @@
     </section>
 
     <!-- نموذج الطلب للقمصان -->
-    <div id="jerseyForm" class="modal">
+    <div id="orderForm" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeForm('jerseyForm')">&times;</span>
-            <h3>Acheter un Maillot</h3>
-            <label for="customization">Choisissez une option:</label>
-            <select id="customization" onchange="toggleCustomization()">
-                <option value="standard">Standard (800 MRU)</option>
-                <option value="custom">Personnalisé (1000 MRU)</option>
-            </select>
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h3>Commander un Maillot</h3>
+            <div id="orderDetails"></div>
 
-            <div id="customFields" style="display: none;">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" placeholder="Votre nom" required>
-                <label for="number">Numéro:</label>
-                <input type="text" id="number" placeholder="Numéro souhaité" required>
-            </div>
+            <label for="name">Nom:</label>
+            <input type="text" id="name" placeholder="Votre nom" required>
+
+            <label for="number">Numéro:</label>
+            <input type="text" id="number" placeholder="Numéro souhaité" required>
 
             <label for="size">Choisissez la taille:</label>
             <select id="size" required>
@@ -96,7 +91,7 @@
             <label for="paymentScreenshot">Télécharger une capture d'écran du paiement:</label>
             <input type="file" id="paymentScreenshot" accept="image/*" required>
 
-            <button type="button" onclick="submitJerseyOrder()">Commander</button>
+            <button type="button" onclick="submitOrder()">Commander</button>
         </div>
     </div>
 
