@@ -217,8 +217,8 @@ form button:hover {
 }
 
 .slide {
-    width: 100%; /* تجعل كل صورة بعرض الشريط */
-    height: 100%; /* تجعل كل صورة بارتفاع الشريط */
+    width: 30%; /* تجعل كل صورة بعرض الشريط */
+    height: 30%; /* تجعل كل صورة بارتفاع الشريط */
     object-fit: cover; /* لضبط الصورة داخل الشريط */
     transition: opacity 1s ease-in-out;
 }
