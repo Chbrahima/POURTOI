@@ -201,10 +201,10 @@ form button:hover {
 }
 /* شريط الصور */#image-slider {
     position: relative;
-    width: 50%; /* عرض الشريط */
-    max-width: 300px; /* الحد الأقصى للعرض */
-    height: 150px; /* ارتفاع الشريط */
-    margin: auto;
+    width: 80%; /* عرض الشريط */
+    max-width: 600px; /* الحد الأقصى للعرض */
+    height: 300px; /* ارتفاع الشريط */
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -217,8 +217,8 @@ form button:hover {
 }
 
 .slide {
-    width: 50%; /* تجعل كل صورة بعرض الشريط */
-    height: 50%; /* تجعل كل صورة بارتفاع الشريط */
+    width: 300px; /* تجعل كل صورة بعرض الشريط */
+    height: 2000px; /* تجعل كل صورة بارتفاع الشريط */
     object-fit: cover; /* لضبط الصورة داخل الشريط */
     transition: opacity 1s ease-in-out;
 }
