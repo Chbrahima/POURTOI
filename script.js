@@ -7,13 +7,10 @@ function showSection(sectionId) {
 }
 
 function openOptions(type) {
-    const orderDetails = document.getElementById('orderDetails');
-    if (type === 'standard') {
-        orderDetails.innerHTML = "Vous avez choisi une Camiseta Standard - 800 MRU";
-    } else {
-        orderDetails.innerHTML = "Vous avez choisi une Camiseta Personnalisée - 1000 MRU";
+    if (type === 'custom') {
+        document.getElementById('orderDetails').innerHTML = "Vous avez choisi une Camiseta Personnalisée - 1000 MRU";
+        document.getElementById('orderForm').style.display = 'block'; // فقط عرض النموذج للقمصان المخصصة
     }
-    document.getElementById('orderForm').style.display = 'block';
 }
 
 function closeForm() {
@@ -30,5 +27,4 @@ function submitOrder() {
     let orderSummary = `Votre commande a été soumise!\nNom: ${name}\nNuméro: ${number}\nTaille: ${size}\nMoyen de paiement: ${paymentMethod}`;
     
     alert(orderSummary);
-    closeForm(); // Fermer le formulaire après soumission
-}
+    closeForm(); // Fermer
