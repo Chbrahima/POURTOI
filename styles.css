@@ -1,72 +1,3 @@
-/* استعلام وسائط للأجهزة المحمولة */
-@media (max-width: 768px) {
-    /* تعديل حجم الخط */
-    .site-name {
-        font-size: 2em; /* تقليل حجم الخط */
-    }
-
-    .realization-container {
-        flex-direction: column; /* ترتيب العناصر عموديًا */
-        align-items: center; /* توسيط العناصر */
-    }
-
-    .image {
-        width: 80%; /* عرض أكبر للصور على الهواتف */
-        margin-bottom: 20px; /* إضافة مسافة بين الصور */
-    }
-
-    form {
-        padding: 10px; /* تقليل الحشوة داخل النموذج */
-    }
-
-    form input, form textarea {
-        width: 100%; /* عرض 100% للنموذج */
-    }
-    /* الوضع الليلي */
-body.night-mode {
-    background-color: #121212; /* لون خلفية داكن */
-    color: #ffffff; /* لون النص أبيض */
-}
-
-header.night-mode {
-    background: #1e1e1e; /* لون خلفية العنوان */
-}
-
-section.night-mode {
-    background: #1e1e1e; /* لون خلفية الأقسام */
-    box-shadow: none; /* إزالة ظل الأقسام */
-}
-
-footer.night-mode {
-    background: #1e1e1e; /* لون خلفية الفوتر */
-}
-
-/* زر الوضع الليلي */
-.night-mode-toggle {
-    cursor: pointer;
-    padding: 10px;
-    background: #35424a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 20px 0;
-}
-
-.night-mode-toggle:hover {
-    background: #475a62;
-}
-
-    header, footer {
-        padding: 10px 0; /* تقليل الحشوة في الهيدر والفوتر */
-    }
-}
-
-/* استعلام وسائط للأجهزة اللوحية */
-@media (max-width: 1024px) {
-    .image {
-        width: 45%; /* عرض أقل للصور على الأجهزة اللوحية */
-    }
-}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -122,60 +53,21 @@ section {
 }
 
 .realization {
-    margin: 10px; /* إضافة مسافة بين العناصر */
+    margin: 10px;
 }
 
 .image {
-    flex: 1 0 20%; /* استخدام flex لتحديد العرض */
-    max-width: 200px; /* تحديد الحد الأقصى للعرض */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    flex: 1 0 20%;
+    max-width: 200px;
+    height: auto;
     transition: transform 0.2s;
     cursor: pointer;
 }
 
 .image:hover {
-    transform: scale(1.05); /* تأثير عند التمرير */
+    transform: scale(1.05);
 }
 
-.contact-info p {
-    margin: 5px 0;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin: 10px 0 5px;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 10px;
-    background: #35424a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #475a62;
-}
 .contact-info {
     display: flex;
     gap: 15px;
@@ -198,4 +90,49 @@ form button:hover {
 
 .contact-icon:hover {
     background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .site-name {
+        font-size: 2em;
+    }
+
+    .realization-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .image {
+        width: 45%;
+    }
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.night-mode, section.night-mode, footer.night-mode {
+    background: #1e1e1e;
+}
+
+.night-mode-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background: #35424a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.night-mode-toggle:hover {
+    background: #475a62;
 }
